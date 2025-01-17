@@ -14,13 +14,23 @@
         let down = document.getElementById('down');
 
         up.addEventListener('click', async () => {
-            let response = await fetch('http://127.0.0.1:8000/api/tailscale/up');
+            let response = await fetch('http://127.0.0.1:8000/api/tailscale/up', {
+                    method: 'GET',
+                    headers: {
+                        'access_token': ''
+                    }
+                })
             let result = await response.json();
             console.log(result);
         });
 
         down.addEventListener('click', async () => {
-            let response = await fetch('http://127.0.0.1:8000/api/tailscale/down');
+            let response = await fetch('http://127.0.0.1:8000/api/tailscale/down', {
+                    method: 'GET',
+                    headers: {
+                        'access_token': ''
+                    }
+                });
             let result = await response.json();
             console.log(result);
         });
